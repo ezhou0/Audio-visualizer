@@ -1,2 +1,3 @@
-# JS-Project
-JS Project
+# Audio-Visualizer
+
+Audio-Visualizer
