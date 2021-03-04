@@ -1,9 +1,9 @@
 import AudioPlayer from './AudioPlayer';
 
 const player = new AudioPlayer('.audioPlayer', [
-    { name: 'OvO', url: 'songs/Ovo.mp3' },
-    { name: 'Regrets', url: 'songs/Regrets.mp3' },
-    { name: 'Night Driver', url: 'songs/Night_Driver.mp3' },
-    { name: 'Opened Eyes Woke', url: 'songs/Opened_Eyes_Woke.mp3' },
-    { name: 'The Woogie', url: 'songs/The_Woogie.mp3' },
+    { name: 'Adventures', url: 'music/Adventures.mp3' },
+    { name: 'Last Summer', url: 'music/Last_Summer.mp3' },
+    { name: 'Lemon Cake', url: 'music/Lemon_Cake' },
+    { name: 'Spring', url: 'music/Spring.mp3' },
+    { name: 'Where Are We', url: 'music/Where_Are_We.mp3' },
 ]);
