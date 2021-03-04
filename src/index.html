@@ -9,8 +9,14 @@
 </head>
 
 <body>
-    <div class="audioPlayer"></div>
+    <div class="audioVisualizer"></div>
     <script src="app.js"></script>
+    <div id="content">
+        <input type="file" id="thefile" accept="audio/*" />
+        <button id='thefile' src='music/Adventures.mp3'>Adventures</button>
+        <canvas id="canvas"></canvas>
+        <audio id="audio" controls></audio>
+    </div>
 </body>
 
 </html>
