@@ -1,21 +1,9 @@
-// 
-//
-//     { name: 'Adventures', url: 'music/Adventures.mp3' },
-//     { name: 'Last Summer', url: 'music/Last_Summer.mp3' },
-//     { name: 'Lemon Cake', url: 'music/Lemon_Cake' },
-//     { name: 'Spring', url: 'music/Spring.mp3' },
-//     { name: 'Where Are We', url: 'music/Where_Are_We.mp3' },
-//
 window.onload = function () {
 
     var file = document.getElementById("thefile");
     var audio = document.getElementById("audio");
 
-    file.onchange = function () {
-        var files = this.files;
-        audio.src = URL.createObjectURL(files[0]);
-        audio.load();
-        audio.play();
+    var visualizer = function(){
         var context = new AudioContext();
         var src = context.createMediaElementSource(audio);
         var analyser = context.createAnalyser();
@@ -65,8 +53,17 @@ window.onload = function () {
                 x += barWidth + 1;
             }
         }
+        renderFrame();
+    }
+
+    file.onchange = function () {
+        var files = this.files;
+        audio.src = URL.createObjectURL(files[0]);
+        audio.load();
+        audio.play();
+        visualizer();
 
         audio.play();
-        renderFrame();
+        
     };
 };
