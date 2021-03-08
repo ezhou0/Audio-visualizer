@@ -26,11 +26,26 @@ body{
   height: 100%;
   
 }
-
+#pp-div{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
 #play, #pause{
-  position: fixed;
+  
   z-index: 200;
+}
 
+.color-div{
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  z-index: 300;
+  float: right;
+}
+
+input[type='range']{
+  -webkit-appearance: none;
 }
 
 audio {

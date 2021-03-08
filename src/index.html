@@ -11,14 +11,24 @@
 </head>
 <body>
     <div id="content">
+        <nav>
+        <div id='pp-div'>
         <button id = 'play'> Play</button>
         <button id='pause'> Pause</button>
+        </div>
+        </nav>
         
         <!-- <button  id='button'>Play File</button>
         <audio id="audio" src="music/Last_Summer.mp3" ></audio> -->
         <input type="file" id="thefile" accept="audio/*" />
         <canvas id="canvas"></canvas>
         <audio id="audio" ></audio> 
+
+        <div class='color-div'>Color Customizer
+            Red: <input type='range' id='red', min='0' max='255' value = '255'>
+            Green: <input type='range' id='red' , min='0' max='255' value='255'>
+            Blue: <input type='range' id='red' , min='0' max='255' value='255'>
+        </div>
     </div>
 </body>
 </html>
