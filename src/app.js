@@ -1,11 +1,16 @@
 window.onload = function () {
 
-    var file = document.getElementById("thefile");
-    var button = document.getElementById('button');
+    // var file = document.getElementById("thefile");
+    
     var playBtn = document.getElementById('play');
     var pauseBtn = document.getElementById('pause');
-    var audio = document.getElementById('audio');
-    
+
+    const audio1btn = document.getElementById('audio1');
+    let audio1 = new Audio();
+    audio1.src = '/music/Adventures.mp3';
+    audio1btn.addEventListener('click', function(){
+       audio1.play();
+    })
 
     playBtn.onclick = function(){
         audio.play();
