@@ -1,39 +1,56 @@
+window.onload = function (){
+   
 
-    // var file = document.getElementById("thefile");
+    // const audio1 = document.getElementById('audio1');
+    // let audio1mus = new Audio('Adventures.mp3');
+    // audio1.addEventListener('click', function(){
+    //     if (!audio1mus.paused) { /* Check if it's not paused */
+    //         audio1mus.pause();  
+    //     }
+    //     else {
+            
+    //         audio1mus.play();
+    //         /* To make it play again */
+    //         visualizer();
+    //            audio1mus.play();
+    //     }
+       
+    // });
     
-    // var playBtn = document.getElementById('play');
-    // var pauseBtn = document.getElementById('pause');
+    let musicDropdown = document.getElementById('music-dropdown');
+    let playbtn = document.getElementById('playbtn');
+    let pausebtn = document.getElementById('pausebtn');
+    let currAudio = new Audio();
 
-    const audio1 = document.getElementById('audio1');
-    let audio1mus = new Audio('Adventures.mp3');
-    audio1.addEventListener('click', function(){
-        // console.log('click');
-        if (!audio1mus.paused) { /* Check if it's not paused */
-            audio1mus.pause();  /* To pause the audio */
-              /* To reset the time back to 0 */
-        }
-        else {
-            audio1mus.play();
-            visualizer();  /* To make it play again */
+    playbtn.addEventListener('click', function(){
+        const musicSelect = musicDropdown.value;
+        switch(musicSelect){
+            case 'Adventures.mp3': 
+                console.log(musicSelect);
+                currAudio.src = musicSelect;
+                currAudio.play();
+                break;
+            case 'Last_Summer.mp3':
+                console.log(musicSelect);
+                currAudio.src = musicSelect;
+                currAudio.play();
+                break;
+            default: 
+                break;
         }
     });
 
-    // playBtn.onclick = function(){
-    //     audio.play();
-    // }
+    pausebtn.addEventListener('click', function(){
+        console.log('pause');
+        currAudio.pause();
+    });
 
-    // pauseBtn.onclick = function(){
-    //     audio.pause();
-    // }
 
-    // button.onclick = function(){
-    //     audio.src = 'music/Adventures.mp3';
-    //     audio.load();
-    //     audio.play();
-    //     visualizer();
 
-    //     audio.play();
-    // }
+
+    
+
+   
 
     
 
@@ -175,5 +192,5 @@
 
 
 
-
+}
 
