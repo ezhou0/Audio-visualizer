@@ -16,13 +16,28 @@ width: 200px;
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   right: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+ 
+}
+
+.title{
+  padding-left: 14px;
+}
+
+.nav-list{
+  padding-left: 15px;
 }
 
 .nav-item-open{
   list-style: none;
   display: flex;
  align-items: center;
+ padding-bottom: 20px;
+    
+} 
+
+.nav-item-open i {
+padding-right: 15px;
 }
 
 .button {
