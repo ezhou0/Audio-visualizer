@@ -70,7 +70,7 @@ function animate() {
 
 function drawBar(startX, startY, endX, endY, freq, canvasContext) {
     // barColor = "rgba(" + freq + ", " + freq + ", " + 205 + ")";
-    barColor = document.getElementById('color').value;
+    let barColor = document.getElementById('color').value;
     
     const barWidth = 2;
 
