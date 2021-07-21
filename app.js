@@ -7,7 +7,7 @@ function visualize() {
     //fix CORS error
     audio.crossOrigin = "anonymous";
     //set context for either chrome or safari browsers
-    let audioContext = new (window.AudioContext || window.webkitAudioContext);
+    audioContext = new (window.AudioContext || window.webkitAudioContext);
 
     audioAnalyser = audioContext.createAnalyser();
     audio.src = "music/Adventures.mp3";
@@ -78,4 +78,16 @@ function drawBar(startX, startY, endX, endY, freq, canvasContext) {
     canvasContext.moveTo(startX, startY);
     canvasContext.lineTo(endX, endY);
     canvasContext.stroke();
+}
+
+function pause(){
+    if (audioContext.state === 'running') {
+        audioContext.suspend();
+    }
+}
+
+function resume() {
+    if (audioContext.state === 'suspended') {
+        audioContext.resume();
+    }
 }
