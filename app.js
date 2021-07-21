@@ -69,7 +69,7 @@ function animate() {
 }
 
 function drawBar(startX, startY, endX, endY, freq, canvasContext) {
-    let barColor = "rgba(" + freq + ", " + freq + ", " + 205 + ")";
+    barColor = "rgba(" + freq + ", " + freq + ", " + 205 + ")";
     const barWidth = 2;
 
     canvasContext.strokeStyle = barColor;

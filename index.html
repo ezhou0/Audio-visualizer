@@ -11,17 +11,40 @@
     <title>Audio Visualizer</title>
     <script src="app.js" type="text/javascript"></script>
     <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+
     
 </head>
 <body bgcolor="#464f0e">
-    <nav id='nav' style="display: none"> 
-        <button onclick='pause()'>Pause</button>
-        <button onclick='resume()'>Play</button>
-    </nav>
+   
      <div class="wrapper">
              <button onclick="visualize()" class="button" style="vertical-align:middle" id="play"><span>Play</span></button>
      </div>
-     
+    <div class='nav' id='nav' style="display: none">
+        <h2>Audio Visualizer</h2>
+        
+        <ul class='nav-list'>
+
+        <li class='nav-item-open'>
+            <i class="fas fa-align-justify"></i>
+        </li>
+
+           <li class='nav-item-open'>
+                <i class="fas fa-pause"></i>
+                <button onclick='pause()'>Pause</button>
+           </li>
+
+            <li class='nav-item-open'>
+                <i class="fas fa-play"></i>
+                <button onclick='resume()'>Play</button>
+            </li>
+
+
+
+        </ul>
+       
+       
+    </div>
     <canvas id="canvas">
     </canvas>
 
