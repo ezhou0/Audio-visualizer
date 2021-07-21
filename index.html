@@ -7,34 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="./style.css" rel="stylesheet">
+    
     <title>Audio Visualizer</title>
 </head>
 <body>
     
-    <div id="content">
-        
-        
-        
-        <!-- <button id="audio1" >Audio1</button>  -->
-        <nav>
-        <!-- <select id='music-dropdown'>
-            <option value="Adventures.mp3" selected>Adventures</option>
-            <option value="Last_Summer.mp3">Last Summer</option>
-        </select> -->
-        <button id='playbtn'> Play </button>
-        <button id='pausebtn'>Pause</button>
-        </nav>
-       
-            <canvas id = "canvas"></canvas>
-            <audio id="audio" src = 'Adventures.mp3' controls></audio>
-        
-        <!-- <div class='color-div'>Color Customizer
-            Red: <input type='range' id='red', min='0' max='255' value = '255'>
-            Green: <input type='range' id='red' , min='0' max='255' value='255'>
-            Blue: <input type='range' id='red' , min='0' max='255' value='255'>
-        </div> -->
-        <script type='text/javascript' src='app.js'></script>
+    <div id='container'>
+        <canvas id='canvas'></canvas>
+        <audio id='audio' crossorigin='anonymous' src = 'Adventures.mp3' controls></audio>
+        <input type='file' id='fileUpload' />
+
     </div>
-    
+    <script src="./app.js"></script>
+ 
 </body>
 </html>

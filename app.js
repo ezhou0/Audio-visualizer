@@ -1,64 +1,81 @@
-window.onload = function () {
 
-    var file = document.getElementById("thefile");
-    var audio = document.getElementById("audio");
+let audioSource;
+let analyser;
+container.addEventListener('click', function(){
+    const audio = document.getElementById('audio');
+    
+    // audio.src = 'Adventures.mp3';
+    
+    const audioContext = new AudioContext();
+    audio.play();
+    audioSource = audioContext.createMediaElementSource(audio);
+    analyser = audioContext.createAnalyser();
+    audioSource.connect(analyser);
+    analyser.connect(audioContext.destination);
+    analyser.fftSize = 512;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
 
-    file.onchange = function () {
-        var files = this.files;
-        audio.src = audio.src;
-        audio.load();
-        audio.play();
-        var context = new AudioContext();
-        var src = context.createMediaElementSource(audio);
-        var analyser = context.createAnalyser();
+    const barWidth = 15;
+    let barHeight;
+    let x;
 
-        var canvas = document.getElementById("canvas");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        var ctx = canvas.getContext("2d");
+    function animate() {
+        x = 0;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        analyser.getByteFrequencyData(dataArray);
+        drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray);
+        requestAnimationFrame(animate);
+    }
+    animate();
+});
 
-        src.connect(analyser);
-        analyser.connect(context.destination);
+file.addEventListener('change', function () {
+    const files = this.files;
+    const audio = document.getElementById('audio');
+    audio.src = URL.createObjectURL(files[0]);
+    console.log(audio);
+    audio.load();
+    audio.play();
 
-        analyser.fftSize = 256;
+    audioSource = audioContext.createMediaElementSource(audio);
+    analyser = audioContext.createAnalyser();
+    audioSource.connect(analyser);
+    analyser.connect(audioContext.destination);
+    analyser.fftSize = 512;
+    const bufferLength = analyser.frequencyBinCount;
+    const dataArray = new Uint8Array(bufferLength);
 
-        var bufferLength = analyser.frequencyBinCount;
-        console.log(bufferLength);
+    const barWidth = 15;
+    let barHeight;
+    let x;
 
-        var dataArray = new Uint8Array(bufferLength);
+    function animate() {
+        x = 0;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        analyser.getByteFrequencyData(dataArray);
+        drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray);
+        requestAnimationFrame(animate);
+    }
+    animate();
+});
 
-        var WIDTH = canvas.width;
-        var HEIGHT = canvas.height;
+function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
+    for (let i = 0; i < bufferLength; i++) {
+        barHeight = dataArray[i] * 1.2;
+        barWidth = dataArray[i] * 0.4;
+        ctx.save();
+        let x = Math.sin(i / 30 * Math.PI / 180) * 200;
+        let y = Math.cos(i / 30 * Math.PI / 180) * 200;
+        ctx.translate(canvas.width / 2 + x, canvas.height / 2 - y / 5);
+        ctx.rotate(i + Math.PI * 2 / bufferLength);
+        const hue = i / 6 + 200;
+        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        ctx.strokeStyle = 'hsl(1, 100%, ' + i / 2 + '%)';
 
-        var barWidth = (WIDTH / bufferLength) * 2.5;
-        var barHeight;
-        var x = 0;
-
-        function renderFrame() {
-            requestAnimationFrame(renderFrame);
-
-            x = 0;
-
-            analyser.getByteFrequencyData(dataArray);
-
-            ctx.fillStyle = "#000";
-            ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-            for (var i = 0; i < bufferLength; i++) {
-                barHeight = dataArray[i];
-
-                var r = barHeight + (25 * (i / bufferLength));
-                var g = 250 * (i / bufferLength);
-                var b = 50;
-
-                ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-                ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-
-                x += barWidth + 1;
-            }
-        }
-
-        audio.play();
-        renderFrame();
-    };
-};
+        ctx.fillRect(x, y, barWidth, barHeight);
+        ctx.strokeRect(x, y, barWidth, barHeight);
+        ctx.restore();
+        x += barWidth;
+    }
+}
