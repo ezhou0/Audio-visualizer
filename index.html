@@ -29,18 +29,22 @@
         
 
            <li class='nav-item'>
-                <i class="fas fa-pause"></i>
+                <i class="fas fa-pause" onclick='pause()'></i>
                 <button class='nav-label' onclick='pause()'>Pause</button>
            </li>
 
             <li class='nav-item'>
-                <i class="fas fa-play"></i>
+                <i class="fas fa-play" onclick='resume()'></i>
                 <button class='nav-label'onclick='resume()'>Play</button>
             </li>
 
             <li class='nav-item'>
                 <i class="fas fa-fill-drip"></i>
                 <input type='color' value="#e66465" id='color' />
+            </li>
+            <li class='nav-item'>
+                
+                <input type='range' min = '1' max='20' value="2" step = '1'id='barWidth' />
             </li>
 
             <li class='nav-item'>

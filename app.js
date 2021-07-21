@@ -72,7 +72,8 @@ function drawBar(startX, startY, endX, endY, freq, canvasContext) {
     // barColor = "rgba(" + freq + ", " + freq + ", " + 205 + ")";
     let barColor = document.getElementById('color').value;
     
-    const barWidth = 2;
+    // let barWidth = 2;
+    let barWidth = document.getElementById('barWidth').value;
 
     canvasContext.strokeStyle = barColor;
     canvasContext.lineWidth = barWidth;
