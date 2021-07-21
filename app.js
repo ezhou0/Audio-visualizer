@@ -69,7 +69,9 @@ function animate() {
 }
 
 function drawBar(startX, startY, endX, endY, freq, canvasContext) {
-    barColor = "rgba(" + freq + ", " + freq + ", " + 205 + ")";
+    // barColor = "rgba(" + freq + ", " + freq + ", " + 205 + ")";
+    barColor = document.getElementById('color').value;
+    
     const barWidth = 2;
 
     canvasContext.strokeStyle = barColor;
@@ -90,4 +92,18 @@ function resume() {
     if (audioContext.state === 'suspended') {
         audioContext.resume();
     }
+}
+
+function collapse(){
+
+const collapsedClass = "nav--collapsed";
+const lsKey = "navCollapsed";
+const nav = document.querySelector("nav");
+const navButton = document.querySelector("nav-button");
+if (localStorage.getItem(lsKey) === "true") {
+    nav.classList.add(collapsedClass);
+}else{
+    nav.classList.toggle(collapsedClass);
+    localStorage.setItem(lsKey, nav.classList.contains(collapsedClass));
+}
 }

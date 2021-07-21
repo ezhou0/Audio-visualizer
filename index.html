@@ -22,23 +22,44 @@
      </div>
     <div class='nav' id='nav' style="display: none">
         <h2 class='title'>Audio Visualizer</h2>
-
+        <button class='nav-button' onclick='collapse()'><i class="fas fa-align-justify"></i></button>
         <ul class='nav-list'>
 
-        <li class='nav-item-open'>
-            <i class="fas fa-align-justify"></i>
-        </li>
+        
+            
+            
+        
 
-           <li class='nav-item-open'>
+           <li class='nav-item'>
                 <i class="fas fa-pause"></i>
-                <button onclick='pause()'>Pause</button>
+                <button class='nav-label' onclick='pause()'>Pause</button>
            </li>
 
-            <li class='nav-item-open'>
+            <li class='nav-item'>
                 <i class="fas fa-play"></i>
-                <button onclick='resume()'>Play</button>
+                <button class='nav-label'onclick='resume()'>Play</button>
             </li>
 
+            <li class='nav-item'>
+                <a href='https://github.com/ezhou0/Audio-visualizer/wiki'>
+                     <i class="fab fa-github fa-lg"></i>
+                     <div class='nav-label'>Github</div>
+                </a>
+            </li>
+
+            <li class='nav-item'>
+                <a href='https://www.linkedin.com/in/edwin-zhou-a231b31b6/'>
+                    <i class="fab fa-linkedin fa-lg"></i>
+                    <div class='nav-label'>LinkedIn</div>
+                </a>
+            </li>
+
+
+            <li class='nav-item'>
+                <input type='color' value = "#e66465" id='color'
+            </li>
+           
+           
 
 
         </ul>
