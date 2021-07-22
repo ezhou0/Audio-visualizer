@@ -8,6 +8,27 @@ body {
     overflow: hidden;
 }
 
+button{
+   border:none; 
+   background: none;
+}
+
+.title-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  padding-left: 10px;
+}
+
+.links{
+  position: absolute;
+  bottom: 0;
+}
+
 .nav{
   position: fixed;
   height: 100%;
@@ -28,6 +49,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 50px;
+   align-content: center;
+   padding-top: 20px;
  
 }
 
@@ -39,9 +62,7 @@ body {
    transition: all .05 ease;
 } */
 
-.title{
-  padding-left: 14px;
-}
+
 
 .nav-list{
   padding-left: 15px;

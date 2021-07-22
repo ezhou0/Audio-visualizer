@@ -21,7 +21,10 @@
              <button onclick="visualize()" class="button" style="vertical-align:middle" id="play"><span>Play</span></button>
      </div>
     <div class='nav' id='nav' style="display: none">
-        <h2 class='title nav-label'>Audio Visualizer</h2>
+        <div class=title-container>
+        <i class="fas fa-headphones-alt"></i>
+        <h3 class='title nav-label'>Audio Visualizer</h3>
+        </div>
         <button class='toggle-button' onclick='toggleClass()'><i class="fas fa-bars"></i></button>
         <ul class='nav-list'>
 
@@ -39,24 +42,23 @@
             </li>
 
             <li class='nav-item'>
-                
-              <button class = 'nav-label' >Replay</button>
+            <i class="fas fa-redo" onclick='replay()'></i>
+                <button class = 'nav-label' onclick='replay()'>Replay</button>
             </li>
 
             
-
             <li class='nav-item'>
-                <i class="fas fa-fill-drip"></i>
+                <i class="fas fa-fill-drip" onclick='toggleClass()'></i>
                 <input  class='nav-label'type='color' value="#5589ce" id='color' />
             </li>
            
             <li class='nav-item'>
-            <i class="far fa-chart-bar"></i>
+            <i class="far fa-chart-bar" onclick='toggleClass()'></i>
                 <input  class='nav-label'type='range' min='70' max='400' value="250" step='10' id='barNum' />
             </li>
 
             <li class='nav-item'>
-                <i class="fas fa-arrows-alt-h"></i>
+                <i class="fas fa-arrows-alt-h" onclick='toggleClass()'></i>
                 
                 <input class='nav-label' type='range' min = '1' max='20' value="2" step = '1'id='barWidth' />
             </li>
@@ -67,12 +69,17 @@
                     <option value='circle' >bloom</option>
                     <option value='classic' selected>classic</option>
                 </select>
-            </li>
+            </li>   
+        </ul>
 
+
+
+        <!-- links -->
+        <ul class='links nav-list'>
             <li class='nav-item'>
                 <a href='https://github.com/ezhou0/Audio-visualizer/wiki'>
-                     <i class="fab fa-github fa-lg"></i>
-                     <div class='nav-label'>Github</div>
+                    <i class="fab fa-github fa-lg"></i>
+                    <div class='nav-label'>Github</div>
                 </a>
             </li>
 
@@ -82,13 +89,6 @@
                     <div class='nav-label'>LinkedIn</div>
                 </a>
             </li>
-
-
-            
-           
-           
-
-
         </ul>
        
        

@@ -137,6 +137,9 @@ function drawPlane(x, y, freq, canvasContext, barHeight) {
     canvasContext.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
 }
 
+
+///play pause functionality
+
 function pause(){
     if (audioContext.state === 'running') {
         audioContext.suspend();
@@ -146,15 +149,16 @@ function pause(){
 function resume() {
     if (audioContext.state === 'suspended') {
         audioContext.resume();
-    }else {
-        audio.pause();
-        visualize();
     }
 }
 
+function replay(){
+  
+    audioContext.close().then(visualize());
+}
 
 
-///sidebar open and close functionality
+///collapsable sidebar functionality
 
 function toggleClass(){
     let nav = document.getElementById('nav');
