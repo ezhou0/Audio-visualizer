@@ -26,13 +26,13 @@
         <ul class='nav-list'>
 
             <li class='nav-item'>
-                <i class="fas fa-headphones-alt"></i>
+                <i class="fas fa-bars toggle-button" onclick='toggleClass()'></i>
+                
                 <div class='title nav-label'>Audio Visualizer</div>
             </li>
 
-            <li class='nav-item'>
-                <i class="fas fa-bars toggle-button" onclick='toggleClass()'></i>
-            </li>
+            
+              
 
         
            <li class='nav-item'>
@@ -68,19 +68,21 @@
             </li>
 
             <li class='nav-item'>
-                <i class="fab fa-deezer"></i>
+                <i class="fab fa-deezer" onclick='toggleClass()'></i>
                 <select  class='nav-label' name='visualizer' id='visChoice'>
-                    <option value='circle' >bloom</option>
-                    <option value='classic' selected>classic</option>
+                    <option value='circle' selected >bloom</option>
+                    <option value='classic'>classic</option>
                 </select>
             </li>  
             
             <li class='nav-item'>
-                
+                <i class="fas fa-music" onclick='toggleClass()'></i>
                 <select class='nav-label' name='song-choice' id='songChoice'>
                     <option value="music/Adventures.mp3">Adventures</option>
-                    <option value="music/Last_Summer.mp3" selected>Last Summer</option>
+                    <option value="music/Last_Summer.mp3" >Last Summer</option>
                     <option value="music/Lemon_Cake.mp3">Lemon Cake</option>
+                    <option value="music/Spring.mp3">Spring</option>
+                    <option value="music/Where_Are_We.mp3"selected>Where Are We</option>
                 </select>
             </li>
         </ul>
