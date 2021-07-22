@@ -10,7 +10,8 @@ function visualize() {
     audioContext = new (window.AudioContext || window.webkitAudioContext);
 
     audioAnalyser = audioContext.createAnalyser();
-    audio.src = "music/Adventures.mp3";
+    // audio.src = "music/Adventures.mp3";
+    audio.src = document.getElementById('songChoice').value;
     let source = audioContext.createMediaElementSource(audio);
     source.connect(audioAnalyser);
     audioAnalyser.connect(audioContext.destination);

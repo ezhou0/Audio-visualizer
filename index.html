@@ -21,16 +21,20 @@
              <button onclick="visualize()" class="button" style="vertical-align:middle" id="play"><span>Play</span></button>
      </div>
     <div class='nav' id='nav' style="display: none">
-        <div class=title-container>
-        <i class="fas fa-headphones-alt"></i>
-        <h3 class='title nav-label'>Audio Visualizer</h3>
-        </div>
-        <button class='toggle-button' onclick='toggleClass()'><i class="fas fa-bars"></i></button>
+       
+       
         <ul class='nav-list'>
 
-        
-        
+            <li class='nav-item'>
+                <i class="fas fa-headphones-alt"></i>
+                <div class='title nav-label'>Audio Visualizer</div>
+            </li>
 
+            <li class='nav-item'>
+                <i class="fas fa-bars toggle-button" onclick='toggleClass()'></i>
+            </li>
+
+        
            <li class='nav-item'>
                 <i class="fas fa-pause" onclick='pause()'></i>
                 <button class='nav-label' onclick='pause()'>Pause</button>
@@ -42,7 +46,7 @@
             </li>
 
             <li class='nav-item'>
-            <i class="fas fa-redo" onclick='replay()'></i>
+                <i class="fas fa-redo" onclick='replay()'></i>
                 <button class = 'nav-label' onclick='replay()'>Replay</button>
             </li>
 
@@ -64,12 +68,21 @@
             </li>
 
             <li class='nav-item'>
-               
+                <i class="fab fa-deezer"></i>
                 <select  class='nav-label' name='visualizer' id='visChoice'>
                     <option value='circle' >bloom</option>
                     <option value='classic' selected>classic</option>
                 </select>
-            </li>   
+            </li>  
+            
+            <li class='nav-item'>
+                
+                <select class='nav-label' name='song-choice' id='songChoice'>
+                    <option value="music/Adventures.mp3">Adventures</option>
+                    <option value="music/Last_Summer.mp3" selected>Last Summer</option>
+                    <option value="music/Lemon_Cake.mp3">Lemon Cake</option>
+                </select>
+            </li>
         </ul>
 
 
