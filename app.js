@@ -20,6 +20,11 @@ function visualize() {
     document.getElementById("play").style.display = "none";
     document.getElementById('nav').style.display = 'flex';
     audio.play();
+
+    let canvas = document.getElementById("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvasContext = canvas.getContext("2d");
     // animatePlane();
     let option = document.getElementById('visChoice').value;
     switch(option){
@@ -34,10 +39,10 @@ function visualize() {
 
 function animateCircle() {
     //setup the canvas
-    let canvas = document.getElementById("canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvasContext = canvas.getContext("2d");
+    // let canvas = document.getElementById("canvas");
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
+    // canvasContext = canvas.getContext("2d");
 
     //center of the circle
     let centerX = canvas.width / 2;
@@ -96,10 +101,10 @@ function drawBar(startX, startY, endX, endY, freq, canvasContext) {
 
 function animatePlane(){
     //setup the canvas
-    let canvas = document.getElementById("canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvasContext = canvas.getContext("2d");
+    // let canvas = document.getElementById("canvas");
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
+    // canvasContext = canvas.getContext("2d");
 
     let gradient = canvasContext.createLinearGradient(0, 0, 0, canvas.height); //x1, y1, x2, y2
     gradient.addColorStop(0, "rgba(26, 13, 21, 1)")  //offset, color
@@ -147,18 +152,14 @@ function resume() {
     }
 }
 
-function collapse(){
 
-const collapsedClass = "nav--collapsed";
-const lsKey = "navCollapsed";
-const nav = document.querySelector("nav");
-const navButton = document.querySelector("nav-button");
-if (localStorage.getItem(lsKey) === "true") {
-    nav.classList.add(collapsedClass);
-}else{
-    nav.classList.toggle(collapsedClass);
-    localStorage.setItem(lsKey, nav.classList.contains(collapsedClass));
-}
-}
 
+///sidebar open and close functionality
+
+function toggleClass(){
+    let nav = document.getElementById('nav');
+    nav.classList.toggle('active');
+};
+
+  
 

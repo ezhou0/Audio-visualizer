@@ -19,13 +19,25 @@ body {
   flex-direction: column;
 }
 
-.nav--collapsed {
+.nav.active {
+   position: fixed;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+  right: 0;
+  display: flex;
+  flex-direction: column;
   width: 50px;
+ 
 }
 
-.nav--collapsed .nav-label {
+.nav.active .nav-label {
   display: none;
 }
+
+/* .nav.active ul li{
+   transition: all .05 ease;
+} */
 
 .title{
   padding-left: 14px;
