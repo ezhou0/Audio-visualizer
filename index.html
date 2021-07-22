@@ -22,7 +22,7 @@
      </div>
     <div class='nav' id='nav' style="display: none">
         <h2 class='title'>Audio Visualizer</h2>
-        <button class='nav-button' onclick='collapse()'><i class="fas fa-align-justify"></i></button>
+        <button class='nav-button' onclick='collapse()'><i class="fas fa-bars"></i></button>
         <ul class='nav-list'>
 
         
@@ -39,12 +39,34 @@
             </li>
 
             <li class='nav-item'>
-                <i class="fas fa-fill-drip"></i>
-                <input type='color' value="#e66465" id='color' />
+                
+              <button class = 'nav-label' >Replay</button>
             </li>
+
+            
+
             <li class='nav-item'>
+                <i class="fas fa-fill-drip"></i>
+                <input type='color' value="#5589ce" id='color' />
+            </li>
+           
+            <li class='nav-item'>
+            <i class="far fa-chart-bar"></i>
+                <input type='range' min='70' max='400' value="250" step='10' id='barNum' />
+            </li>
+
+            <li class='nav-item'>
+                <i class="fas fa-arrows-alt-h"></i>
                 
                 <input type='range' min = '1' max='20' value="2" step = '1'id='barWidth' />
+            </li>
+
+            <li class='nav-item'>
+                selector
+                <select name='visualizer' id='visChoice'>
+                    <option value='circle' >bloom</option>
+                    <option value='classic' selected>classic</option>
+                </select>
             </li>
 
             <li class='nav-item'>

@@ -20,10 +20,19 @@ function visualize() {
     document.getElementById("play").style.display = "none";
     document.getElementById('nav').style.display = 'flex';
     audio.play();
-    animate();
+    // animatePlane();
+    let option = document.getElementById('visChoice').value;
+    switch(option){
+        case 'circle':
+            animateCircle();
+            break;
+        case 'classic':
+            animatePlane();
+            break;
+    }
 }
 
-function animate() {
+function animateCircle() {
     //setup the canvas
     let canvas = document.getElementById("canvas");
     canvas.width = window.innerWidth;
@@ -34,6 +43,7 @@ function animate() {
     let centerX = canvas.width / 2;
     let centerY = canvas.height / 2;
     let radius = 200;
+   
 
     //background styling
     let gradient = canvasContext.createLinearGradient(0, 0, 0, canvas.height); //x1, y1, x2, y2
@@ -47,7 +57,8 @@ function animate() {
     canvasContext.arc(centerX, centerY, radius, 0, 2 * Math.PI);
     canvasContext.stroke();
 
-    const bars = 250;
+    // const bars = 250;
+    let bars = document.getElementById('barNum').value;
     const theta = 2 * Math.PI / bars;
     audioAnalyser.getByteFrequencyData(freqArray);
     for (let i = 0; i < bars; ++i) {
@@ -65,7 +76,7 @@ function animate() {
         drawBar(startX, startY, endX, endY, freqArray[i], canvasContext);
     }
 
-    window.requestAnimationFrame(animate);
+    window.requestAnimationFrame(animateCircle);
 }
 
 function drawBar(startX, startY, endX, endY, freq, canvasContext) {
@@ -83,6 +94,44 @@ function drawBar(startX, startY, endX, endY, freq, canvasContext) {
     canvasContext.stroke();
 }
 
+function animatePlane(){
+    //setup the canvas
+    let canvas = document.getElementById("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvasContext = canvas.getContext("2d");
+
+    let gradient = canvasContext.createLinearGradient(0, 0, 0, canvas.height); //x1, y1, x2, y2
+    gradient.addColorStop(0, "rgba(26, 13, 21, 1)")  //offset, color
+    gradient.addColorStop(1, "rgba(36, 45, 33, 1)")  //offset, color
+    canvasContext.fillStyle = gradient;
+    canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+    let bars = document.getElementById('barNum').value;
+    audioAnalyser.getByteFrequencyData(freqArray);
+    var bufferLength = audioAnalyser.frequencyBinCount;
+    
+    for (var i = 0; i < bars; i++) {
+        let barHeight = freqArray[i];
+        let x = 0;
+        let y = 0;
+        drawPlane(x, y, freqArray[i], canvasContext, barHeight);
+       x+=1;
+    }
+    requestAnimationFrame(animatePlane);
+}
+
+function drawPlane(x, y, freq, canvasContext, barHeight) {
+    //
+   
+    let barColor = document.getElementById('color').value;
+
+    // let barWidth = 2;
+    let barWidth = document.getElementById('barWidth').value;
+
+    canvasContext.fillStyle = barColor;
+    canvasContext.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+}
+
 function pause(){
     if (audioContext.state === 'running') {
         audioContext.suspend();
@@ -92,6 +141,9 @@ function pause(){
 function resume() {
     if (audioContext.state === 'suspended') {
         audioContext.resume();
+    }else {
+        audio.pause();
+        visualize();
     }
 }
 
@@ -108,3 +160,5 @@ if (localStorage.getItem(lsKey) === "true") {
     localStorage.setItem(lsKey, nav.classList.contains(collapsedClass));
 }
 }
+
+
