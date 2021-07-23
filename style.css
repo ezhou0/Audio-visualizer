@@ -203,7 +203,7 @@ padding-right: 15px;
 
 /* * selector and option styling* */
 select{
-  appearance: none;
+  /* appearance: none; */
   background-color: transparent; 
   /* border: 1px solid rgb(117, 117, 117); */
   /* padding: 0 1em 0 0; */
@@ -219,6 +219,7 @@ select{
 select:hover{
   border: 1px solid rgb(117, 117, 117);
    border-radius: 5px;
+   /* appearance: s; */
    
 }
 
