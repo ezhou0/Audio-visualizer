@@ -99,6 +99,10 @@ i{
  margin: 0;
 }
 
+.nav-list.links{
+  width: 100%
+}
+
 .nav-item{
   list-style: none;
   display: flex;
@@ -106,6 +110,7 @@ i{
  /* padding-top:20px;
  padding-bottom: 20px;
  padding-left: 15px; */
+ 
     
 } 
 
@@ -118,11 +123,13 @@ i{
 padding-right: 15px;
 }
 
-.nav-item a {
-  color: inherit;
+.nav-link{
+  
   text-decoration: none; /* no underline */
   display: flex;
   flex-direction: row;
+  color: inherit;
+  align-items: center;
   
 }
 
