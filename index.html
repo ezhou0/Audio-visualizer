@@ -71,9 +71,8 @@
     <div class='nav' id='nav' >
         <ul class='nav-list'>
 
-            <li class='nav-item'>
+            <li class='title-list'>
                 <i class="fas fa-bars toggle-button" onclick='toggleClass()'></i>
-                
                 <div class='title nav-label'>Audio Visualizer</div>
             </li>
 
@@ -115,11 +114,12 @@
                     <option value='circle' selected>Circle</option>
                     <option value="wave">Wave</option>
                 </select>
+               
             </li>  
             
             <li class='nav-item'>
                 <i class="fas fa-music" onclick='toggleClass()'></i>
-                <select class='nav-label' name='song-choice' id='songChoice'>
+                <select class='nav-select nav-label' name='song-choice' id='songChoice'>
                     <option value="music/Adventures.mp3">Adventures</option>
                     <option value="music/Last_Summer.mp3" selected >Last Summer</option>
                     <option value="music/Lemon_Cake.mp3">Lemon Cake</option>
@@ -132,7 +132,7 @@
 
 
         <!-- links -->
-        <ul class='links nav-list'>
+        <ul class='nav-list links'>
             <li class='nav-item'>
                 <i class="far fa-question-circle modal-button"onclick='toggleModal()' ></i>
                 <div class='nav-label modal-button' onclick='toggleModal()'>Help</div>

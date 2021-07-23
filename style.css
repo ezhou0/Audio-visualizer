@@ -12,6 +12,14 @@ button{
    border:none; 
    background: none;
 }
+ul{
+  padding-left:0;
+}
+i{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
 
 /* nav styling */
 
@@ -23,7 +31,24 @@ button{
 }
 
 .title{
-  padding-left: 10px;
+ padding-left: 5px;
+ 
+}
+
+.title-list{
+ background-color: #6e1cb198;
+  border-top-left-radius: 5px;
+    display: flex;
+ align-items: center;
+ list-style: none;
+}
+.title-list i {
+  padding-right: 15px;
+}
+
+.toggle-button:hover{
+   border-top-left-radius: 5px;
+    background-color: #8626d498;
 }
 
 .links{
@@ -34,13 +59,16 @@ button{
 .nav{
   position: fixed;
   height: 100%;
-  background-color: rgb(255, 255, 255);
-  width: 50px;
-  
+  /* background-color: rgb(255, 255, 255); */
+  width: 35px;
+  border-radius: 5px;
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   right: 0;
+  
   display: flex;
   flex-direction: column;
+ 
+  background-color: #d9e0f0;
 
 }
 
@@ -51,14 +79,14 @@ button{
 .nav.active {
    position: fixed;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+    background-color: #d9e0f0;
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   right: 0;
   display: flex;
   flex-direction: column;
    width: 200px;
    align-content: center;
-   padding-top: 20px;
+   border-radius: 5px;
  
 }
 
@@ -68,16 +96,23 @@ button{
 
 
 .nav-list{
-  padding-left: 15px;
+ margin: 0;
 }
 
 .nav-item{
   list-style: none;
   display: flex;
  align-items: center;
+ /* padding-top:20px;
  padding-bottom: 20px;
+ padding-left: 15px; */
     
 } 
+
+.nav-item:hover{
+   background-color: #e7ecfa;
+}
+
 
 .nav-item i {
 padding-right: 15px;
@@ -161,5 +196,36 @@ padding-right: 15px;
 }
 .info-header{
   text-align: center;
+
+
 }
+
+
+/* * selector and option styling* */
+select{
+  appearance: none;
+  background-color: transparent; 
+  /* border: 1px solid rgb(117, 117, 117); */
+  /* padding: 0 1em 0 0; */
+  border-radius: 5px;
+  width: 130px;
+  height: 35px;
+  outline: none;
+  border: none;
+  text-indent: 5px;
+  
+}
+
+select:hover{
+  border: 1px solid rgb(117, 117, 117);
+   border-radius: 5px;
+   
+}
+
+/* select::-ms-expand {
+  display: none;
+} */
+
+
+
 
