@@ -13,6 +13,8 @@ button{
    background: none;
 }
 
+/* nav styling */
+
 .title-container{
   display: flex;
   flex-direction: row;
@@ -34,7 +36,7 @@ button{
   height: 100%;
   background-color: rgb(255, 255, 255);
   width: 50px;
- 
+  
   box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
   right: 0;
   display: flex;
@@ -64,11 +66,6 @@ button{
   display: flex;
 }
 
-/* .nav.active ul li{
-   transition: all .05 ease;
-} */
-
-
 
 .nav-list{
   padding-left: 15px;
@@ -94,10 +91,12 @@ padding-right: 15px;
   
 }
 
+/* Play button styling */
+
 .button {
     display: inline-block;
     border-radius: 4px;
-    background-color: #464f0e;
+    background-color: #242d21;
     border: none;
     color: #FFFFFF;
     font-size: 28px;
@@ -135,3 +134,32 @@ padding-right: 15px;
 .wrapper {
     text-align: center;
 }
+
+/* modal styling */
+
+.modal{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  
+}
+
+.info{
+  color: white;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px 5px rgba(76, 141, 226, 0.611);
+  background-color: rgb(179, 178, 178);
+}
+.info-header{
+  text-align: center;
+}
+

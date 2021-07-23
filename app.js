@@ -1,6 +1,22 @@
 let audioAnalyser;
 let freqArray;
 
+///modal related functions
+let modal = document.getElementById('theModal');
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+let modalButton = document.getElementsByClassName('modal-button');
+function toggleModal(){
+    modal.style.display = 'flex';
+}
+
+
+
 function visualize() {
     //setup Web Audio API 
     let audio = new Audio();
@@ -233,6 +249,7 @@ function toggleClass(){
     let nav = document.getElementById('nav');
     nav.classList.toggle('active');
 };
+
 
   
 
