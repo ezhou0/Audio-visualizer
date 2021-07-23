@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+   
 }
 
 html,
@@ -188,7 +189,8 @@ padding-right: 15px;
 }
 
 .info{
-  color: white;
+  color: black;
+ 
   position: relative;
   left: 50%;
   top: 50%;
@@ -199,14 +201,23 @@ padding-right: 15px;
   border-radius: 10px;
   border: none;
   box-shadow: 0 0 5px 5px rgba(76, 141, 226, 0.611);
-  background-color: rgb(179, 178, 178);
+    background-color: #d9e0f0;
 }
 .info-header{
   text-align: center;
-
-
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
 }
 
+.info > p{
+   text-shadow: 2px 2px 4px rgb(159, 155, 163);
+}
+
+.info > p:last-child{
+  position: absolute;
+  bottom: 10px;
+
+}
 
 /* * selector and option styling* */
 select{
